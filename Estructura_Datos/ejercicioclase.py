@@ -5,17 +5,16 @@ Crear un método llamado add_grade que recibe un número como parámetro y lo ag
 
 Crear otro método llamado average_grade que calcule y retorne la nota promedio de la lista de notas grades
 """
-
-
-
 class Student:
     def __init__(self, name: str, age: int):
         self.name: str = name
         self.age: int = age
         self.grades: list[float] = []
 
+
     def add_grade(self, grade: float):
         self.grades.append(grade)
+
 
     def average_grade(self) -> float:
         return sum(self.grades) / len(self.grades)

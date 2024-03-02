@@ -9,10 +9,10 @@ Crear otro método llamado average_grade que calcule y retorne la nota promedio 
 
 
 class Student:
-    def __init__(self, name: str, age: int, grades: list[float]):
+    def __init__(self, name: str, age: int):
         self.name: str = name
         self.age: int = age
-        self.grades: list[float] = grades
+        self.grades: list[float] = []
 
     def add_grade(self, grade: float):
         self.grades.append(grade)
@@ -22,9 +22,5 @@ class Student:
 
 
     def __str__(self):
-        return f"{self.name}, edad {self.age}, notas {self.grades}"
-
-
-    def promedio(self):
-        return
+        return f"{self.name}, edad {self.age}, -promedio {self.average_grade()}"
 

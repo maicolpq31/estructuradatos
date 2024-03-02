@@ -11,12 +11,14 @@ from Estructura_Datos.ejercicioclase import Student
 data = [
     {"name": "Pedro", "age": 18, "grades": [2.6, 1.5, 4.2]},
     {"name": "Maria", "age": 23, "grades": [1.5, 3.8, 4.5]},
-    {"name": "Sandro", "age": 16, "grades": [3.2, 3.8, 4.1]}
+    {"name": "Sandro", "age": 19, "grades": [3.2, 3.8, 4.1]}
 ]
 
 students: list[Student] = []
 for register in data:
-    student = Student(register["name"], register["age"], register["grades"]) #objeto estudiante
+    student = Student(register["name"], register["age"]) #objeto estudiante
+    for grade in register["grades"]:
+        student.add_grade(grade)
     students.append(student)
 
 for st in students:

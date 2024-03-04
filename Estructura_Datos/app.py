@@ -34,13 +34,14 @@ filtered_students: list[Student] = [st for st in students if st.average_grade() 
 
 
 #Usar un dictionary comprehension para crear un diccionario de estudiantes que tienen una nota promedio por encima de un umbral dado, con los nombre de los estudiantes como claves y el objeto Student como valor.
-dict_students: dict[str, Student] = {}
-for st in students:
-    if st.average_grade() >= threshold:
-        dict_students[st.name] = st
+#dict_students: dict[str, Student] = {}
+#for st in students:
+#    if st.average_grade() >= threshold:
+#        dict_students[st.name] = st
+dc_dict_students = {st.name: st for st in students if st.average_grade() >= threshold}
 
 print("\nDICCIONARIO DE ESTUDIANTES")
-print(dict_students)
+print(dc_dict_students)
 
 
 print(f"Students with average grade over {threshold}")

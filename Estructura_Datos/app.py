@@ -20,16 +20,17 @@ for register in data:
         student.add_grade(grade)
     students.append(student)
 
-threshold = 3.5#limite del promedio mostrado en pantalla
+threshold = 3.9#limite del promedio mostrado en pantalla
 
 for st in students:
     print(st)
 
 #Usar otro list comprehension para filtrar los estudiantes, excluyendo los que tienen una nota promedio menor que un umbral dado.
-filtered_students: list[Student] = []
-for st in students:
-    if st.average_grade() >= threshold:
-        filtered_students.append(st)
+filtered_students: list[Student] = [st for st in students if st.average_grade() >= threshold]
+
+# for st in students:
+#     if st.average_grade() >= threshold:
+#         filtered_students.append(st)
 
 
 #Usar un dictionary comprehension para crear un diccionario de estudiantes que tienen una nota promedio por encima de un umbral dado, con los nombre de los estudiantes como claves y el objeto Student como valor.
@@ -38,7 +39,7 @@ for st in students:
     if st.average_grade() >= threshold:
         dict_students[st.name] = st
 
-print("\ndiccionario de estudiantes")
+print("\nDICCIONARIO DE ESTUDIANTES")
 print(dict_students)
 
 
